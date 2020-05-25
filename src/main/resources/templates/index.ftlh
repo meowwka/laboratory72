@@ -1,0 +1,13 @@
+<#import "partials/main.ftlh" as main />
+<@main.renderWith title="Main">
+    <h2 style="text-align: center">Themes</h2>
+    <#list  chats as t>
+        <div class="list-group">
+            <a href="/chat/${t.id}"  class="list-group-item list-group-item-action list-group-item-info"> № : ${t.id} Name: ${t.name} Date: ${t.time} Messages:${t.messages}</a>
+
+        </div>
+    </#list>
+    <br><br><br>
+    <#include "partials/pagination.ftlh">
+
+    </@main.renderWith>
