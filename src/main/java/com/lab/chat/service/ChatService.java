@@ -6,7 +6,9 @@ import com.lab.chat.model.Chat;
 import com.lab.chat.repo.ChatRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Service;
 public class ChatService {
     private final ChatRepo chatRepo;
     public Page<ChatDTO> getAll(Pageable pageable) {
+        pageable = PageRequest.of(pageable.getPageNumber(), 3, Sort.by("time").ascending());
         return chatRepo.findAll(pageable).map(ChatDTO::from);
     }
     public ChatDTO getThemeById(Integer themeId){

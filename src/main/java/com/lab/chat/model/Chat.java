@@ -17,7 +17,7 @@ public class Chat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
-    private LocalDateTime time;
+    private LocalDateTime time = LocalDateTime.now();
     @Column
     private String name;
     @OneToMany(mappedBy = "chat", cascade = CascadeType.ALL)

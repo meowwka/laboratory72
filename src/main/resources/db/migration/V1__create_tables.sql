@@ -10,7 +10,7 @@ CREATE TABLE `chats`
 (
     id   int auto_increment primary key not null,
     name varchar(255) not  null,
-    time datetime(6)
+    time datetime(6) not null
 );
     insert into `chats` values (1,'Chat1', CAST('2020-02-20 15:00' as DateTime)),
      (2,'Chat2', CAST('2020-02-20 15:00' as DateTime));

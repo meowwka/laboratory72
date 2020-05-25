@@ -20,11 +20,11 @@ public class Message {
     private String text;
 
     @Column
-    private LocalDateTime time;
-    @ManyToOne
+    private LocalDateTime time = LocalDateTime.now();
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User user;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "chat_id")
     private Chat chat;
 }

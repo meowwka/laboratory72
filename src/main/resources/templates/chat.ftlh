@@ -15,8 +15,8 @@
                     <input type="hidden"  name="${(_csrf.parameterName)!'csrf'}" value="${(_csrf.token)!'--no-token--'}"/>
                 </#if>
                 <input type="hidden" name="chat_id" value="${chat.id}"/>
-                <input type="text" name="text" id="title" class="form-control mb-2  mx-sm-3"  placeholder="Your comment" required>
-                <button type="submit" class="btn btn-outline-info mb-2" onclick="addMessage(this.form)">Add Comment</button>
+                <input type="text" name="text" id="title" class="form-control mb-2  mx-sm-3"  placeholder="Messgae" required>
+                <button type="submit" class="btn btn-outline-info mb-2" >Send</button>
 
             </form>
         </div>
